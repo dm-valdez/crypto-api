@@ -4,6 +4,7 @@ import './App.css';
 import Coin from './Coin';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './themes.js';
+import { Helmet } from 'react-helmet';
 
 const StyledApp = styled.div`
   color: ${(props) => props.theme.fontColor};
@@ -37,6 +38,11 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <StyledApp>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Crypto PH</title>
+          <meta name="description" content="Crypto API" />
+        </Helmet>
         <div className='coin-app'>
           <label className="switch">
             <input type="checkbox" onClick={() => themeToggler()} />
