@@ -1,3 +1,40 @@
+nav {
+  background-image: linear-gradient(135deg, orange 60%, cyan);
+  height: 80px;
+  width: 100%;
+  margin: 0;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 100px;
+}
+
+.switch {
+  top: 25px;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
 .coin-container {
     display: flex;
     justify-content: center;

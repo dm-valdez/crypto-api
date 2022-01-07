@@ -40,14 +40,24 @@ function App() {
       <StyledApp>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Crypto PH</title>
+          <title>Crypto API</title>
           <meta name="description" content="Crypto API" />
         </Helmet>
         <div className='coin-app'>
-          <label className="switch">
-            <input type="checkbox" onClick={() => themeToggler()} />
-            <span className="slider round"></span>
-          </label>
+
+          <nav>
+            <label class="logo">Crypto</label>
+            <ul class="nav_links">
+              {/* <li><a href="#" class="active">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <a href="#" class="cta"><button>Resume</button></a> */}
+              <label className="switch">
+                <input type="checkbox" onClick={() => themeToggler()} />
+                <span className="slider round"></span>
+              </label>
+            </ul>
+          </nav>
           <div className='coin-search'>
             <h1 className='coin-text'>Search a currency</h1>
             <form>
