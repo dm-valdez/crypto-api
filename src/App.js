@@ -19,6 +19,7 @@ function App() {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 
+  // fetch the data from the Coingecko API
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=php&order=market_cap_desc&per_page=100&page=1&sparkline=false')
       .then(res => {
@@ -26,10 +27,12 @@ function App() {
       }).catch(error => console.log(error))
   }, []);
 
+  // set a new state for search input
   const handleChange = e => {
     setSearch(e.target.value)
   };
 
+  // filter all inputs to be lower case
   const filteredCoins = coins.filter(coin =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -48,10 +51,6 @@ function App() {
           <nav>
             <label class="logo">Crypto</label>
             <ul class="nav_links">
-              {/* <li><a href="#" class="active">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-                <a href="#" class="cta"><button>Resume</button></a> */}
               <label className="switch">
                 <input type="checkbox" onClick={() => themeToggler()} />
                 <span className="slider round"></span>
@@ -78,6 +77,7 @@ function App() {
               </div>
             </div>
           </div>
+          {/* displaying data from API */}
           {filteredCoins.map(coin => {
             return (
               <Coin
